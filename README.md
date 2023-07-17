@@ -22,6 +22,14 @@ sp_GetInvoiceInfoWages1 provides the values
 - state.selectedRows
 - state.newSalary
 
+## Social contribution calculation
+```
+/**
+* Salary KHO 2023:42 formula:
+* (invoice amount VAT 0 - expense - allowances - service fee) / (1.{social_percentage} * social_percentage)
+*/
+```
+
 ## Key arrays
 - inv_sum: ```state.newSalary[el].sumInvWithTax - state.newSalary[el].sumInvVat - state.newSalary[el].suminvAllowVat```
   - sumInvWithTax: sumWithoutTax ```(SUM(items.sum_tax_free)) + sumVat (SUM(items.vat)) // items: invoice_items```
